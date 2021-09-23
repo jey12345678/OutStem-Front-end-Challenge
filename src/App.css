@@ -3,25 +3,31 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 50vmin;
   pointer-events: none;
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Form-body{
+  text-align: left;
+  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vmin);
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
+.Form-header{
+  font-size: calc(10px + 2vmin);
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+.App-details {
+  background-color: #FFFFFF;
+  display: block;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #333333;
 }
 
 .App-link {
