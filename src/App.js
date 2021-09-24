@@ -10,6 +10,10 @@ function App() {
   return (
     <div className = "App">
       <HeadingDetails/>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
       <Form/>
 
     </div>
