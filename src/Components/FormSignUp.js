@@ -1,24 +1,26 @@
 import React from 'react'
+import App from '../App';
 import useForm from './UseForm';
 import validate from './validateInfo';
+import '../App.css';
+import HeadingDetails from './HeadingDetails.js'
 
-const FormSignUp = () => {
-    const {handleChange, values, handleSubmit,errors} = useForm(validate);
+const FormSignUp = ({submitForm}) => {
+    const {handleChange, values, handleSubmit,errors} = useForm(submitForm, validate);
     return (
         <div className = 'form-content-right'>
 
+            <HeadingDetails/>
             <form className = 'form' onSubmit = {handleSubmit}>
 
-
-                <h1 className = 'Form-body'>About You</h1> 
-            
-
+                <h2 className = 'Form-header'>About You</h2> 
+        
                 <div className = 'form-inputs'>
-                    <label htmlFor = 'name' className = 'form-label'>
+                    <label htmlFor = 'username' className = 'form-label'>
                         Name:
                     </label>
                     <input
-                        id = 'name'
+                        id = 'username'
                         type = 'text'
                         name = 'name'
                         className = 'form-input'
@@ -42,6 +44,7 @@ const FormSignUp = () => {
                         value = {values.email}
                         onChange = {handleChange}
                     />
+                    {errors.email && <p>{errors.email}</p>}
                    
                 </div>
 
@@ -64,39 +67,48 @@ const FormSignUp = () => {
                         Where did you hear about this opportunity?
                     </label>
                     <select
-                        id = 'whereFound'
-                        name = 'whereFound'
+                        id = "whereFound"
+                        name = "whereFound" 
                         className = 'form-input'
-                        placeholder = "Select Options">
+                        placeholder = "Select Options"
+                        value = {values.whereFound} 
+                        onChange = {handleChange}
+                        >
 
-                            <option disabled selected value> -- select an option -- </option>
-                            <option value = "socialMedia">Social Media</option>
-                            <option value = "wordToMouth">Word to Mouth </option>
-                            <option value = "fromTeacher">From Teachers</option>
-                            <option value = "volunteeringWebsite">Volunteering Website</option>
-                            <option value = "onlineAds">Online Ads</option>
-                            <option value = "flyersAndPosters">Flyers/Posters</option>
-                            <option value = "emails">Emails</option>
+                            <option></option>
+                            <option >Social Media</option>
+                            <option >Word to Mouth </option>
+                            <option >From Teachers</option>
+                            <option >Volunteering Website</option>
+                            <option >Online Ads</option>
+                            <option >Flyers/Posters</option>
+                            <option >Emails</option>
 
                     </select>
+                    {errors.whereFound && <p>{errors.whereFound}</p>}
+                    
                    
                 </div>
 
+               
+
                 
 
-                <h1 className = 'Form-body'>Team Preference</h1>
+                <h2 className = 'Form-header'>Team Preference</h2>
 
-                <div>
+                <div className = 'form-inputs'>
                     <label htmlFor = 'first-choice' className = 'form-label'>
                         First Choice:
                     </label>
                     <select
                         id = 'first-choice'
                         name = 'first-choice'
+                        value = {values.whereFound} 
+                        onChange = {handleChange}
                         className = 'form-input'
                         >
 
-                            <option disabled selected value> -- Select your first team -- </option>
+                            <option></option>
                             <option value = "checkInTeam">Check In Team</option>
                             <option value = "wayfindingTeam">Wayfinding Team</option>
                             <option value = "foodServiceTeam">Food Service Team</option>
@@ -107,7 +119,7 @@ const FormSignUp = () => {
 
                 </div>
 
-                <div>
+                <div className = 'form-inputs'>
                     <label htmlFor = 'second-choice' className = 'form-label'>
                         Second Choice:
                     </label>
@@ -128,7 +140,7 @@ const FormSignUp = () => {
 
                 </div>
 
-                <div>
+                <div className = 'form-inputs'>
                     <label htmlFor = 'third-choice' className = 'form-label'>
                         Third Choice:
                     </label>
@@ -151,25 +163,50 @@ const FormSignUp = () => {
 
                 </div>
 
-                <h1 className = 'Form-body'>Availability</h1>
+                <h2 className = 'Form-header'>Availability</h2>
 
-                <div>
+                <div className = 'avaliablity-inputs'>
+
+                    <div className = 'avaliablity-form' >
+
+                        <label className = 'avaliablity-input' for="wednesday">Wednesday</label><br></br>
+                        <input className = 'avaliablity-input' type="checkbox" id="wednesday" name="wednesday" value="Wednesday"></input>
+
+                    </div>
+
+                    <div className = 'avaliablity-form' >
+
+                        <label className = 'avaliablity-input' for="thursday">Thursday</label><br></br>
+                        <input className = 'avaliablity-input' type="checkbox" id="thursday" name="thursday" value="Thursday" align-content = "center" > </input>
+
+                    </div>
+
+                    <div className = 'avaliablity-form'>
+                        <label className = 'avaliablity-input' for="friday">Friday</label><br></br>
+                        <input  className = 'avaliablity-input'type="checkbox" id="friday" name="friday" value="Friday"></input>
+                    </div>
+
+                    <div className = 'avaliablity-form'>
+                        <label className = 'avaliablity-input' for="saturday">Saturday</label><br></br>
+                        <input className = 'avaliablity-input' type="checkbox" id="saturday" name="saturday" value="Saturday"></input>
+                    </div>
                     
-                    <input type="checkbox" id="wednesday" name="wednesday" value="Wednesday"></input>
-                    <label for="wednesday">Wednesday</label><br></br>
-                    <input type="checkbox" id="thursday" name="thursday" value="Thursday"></input>
-                    <label for="thursday">Thursday</label><br></br>
-                    <input type="checkbox" id="friday" name="friday" value="Friday"></input>
-                    <label for="friday">Friday</label><br></br>
-                    <input type="checkbox" id="saturday" name="saturday" value="Saturday"></input>
-                    <label for="saturday">Saturday</label><br></br>
-
 
                 </div>
 
-                <h1 className = 'Form-body'>Health and Safety</h1>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                
+                <br></br>
+                <br></br>
+                
+                
+                <h2 className = 'Form-header'>Health and Safety</h2>
 
-                <div>
+                <div className = 'form-inputs' >
+
                     <input type="checkbox" id="vaccinatedCheck" name="vaccinatedCheck" value="vaccinatedCheck"></input>
                     <label for="vaccinatedCheck">I am fully vaccinated against COVID-19 by an approved vaccine. Required to attend.</label><br></br>
 
@@ -181,6 +218,17 @@ const FormSignUp = () => {
 
                     <label for="vaccinatedCheck">Dietary restrictions (optional)</label><br></br>
                     <textarea rows="4" cols="50" maxlength="1000">Enter your text here...</textarea>
+
+
+                    <br></br>
+                    <br></br>
+
+                    <input type="checkbox" id="termsAndConditions" name="termsAndConditions" value="termsAndConditions"></input>
+                    <label for="termsAndConditions">I agree with the <a href = "https://www.google.ca/">Terms and Conditions</a> and 
+                        <a href = "https://www.google.ca/"> Privacy Policy</a>
+                    </label>
+                    <br></br>
+
 
                 </div>
 

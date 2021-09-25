@@ -1,13 +1,13 @@
 import React from 'react';
-import image from '../Images/hero.webp';
+
 import '../App.css';
 
 export const HeadingDetails = () => {
     return (
 
         <div className = "App-details">
-            <img src={image} className="App-logo" alt="logo" style= {{width: "100%"}}/>
-            <header className="Form-header">
+            
+            <header className="Form-heading">
 
                 <h1>2022 OutStem Tech Fest Volunteer Sign Up </h1>
 
