@@ -25,6 +25,19 @@
 .form-inputs p{
   color: red;
 }
+.availability-inputs p{
+  color: red;
+  text-align: left;
+  padding-right: 100px;
+  margin-top:10px;
+}
+.last-form{
+  float: none;
+}
+.health-and-safety-padding{
+  padding-top : 180px;
+}
+
 
 .Form-heading{
   font-size: calc(10px + 2vmin);
@@ -66,13 +79,31 @@
 
 }
 
-.avaliablity-inputs{
+.health-inputs{
+  float: none;
+  text-align: left;
+  display: block;
+  margin-left : 50px;
+  margin-bottom: 20px;
+}
+
+.vaccinated-check-design{
+  padding: 20px 20px 20px 20px;
+  border-radius: 4px;
+  border: 2px solid #b7b7b7;
+  height: 10%;
+  width: 87%;
+  margin-bottom: 30px;
+
+}
+
+.availability-inputs{
   float: none;
   text-align: left;
   display: block;
   align-items : center;
-  padding-left: 200px;
-  margin-bottom: 20px;
+  padding-left: 130px;
+  margin-bottom: 50px;
 
 }
 
@@ -80,42 +111,121 @@
 
   clear:both;
 
-  font-size: calc(10px + 2vmin);
-  margin-bottom: 6px;
+  font-size: calc(5px + 2vmin);
+  margin-bottom: 10px;
   color:33333 ;
   display: block;
   
 }
-.avaliablity-form{
-  margin-left : 90px;
-  padding: 12px 12px;
+.availability-form{
+  margin-left : 40px;
+  text-align: center;
   border-radius: 4px;
-  border: 2px solid red;
+  border: 2px solid #b7b7b7;
+  height: 200px;
+  width: 200px;
 
   float:left;
 }
-.avaliablity-input{
+
+.availability-input{
   display: block;
-  padding: 12px 12px;
-}
-.last-form{
-  margin-left : 90px;
-  padding: 12px 12px;
+  padding-top: 12px;
+  font-size: calc(10px + 2vmin);
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-weight: bold;
+
 }
 .form-input {
-  float: none;
   display: block;
   border-radius: 4px;
   box-sizing: border-box;
-
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: calc(5px + 2vmin);
   padding: 12px 12px;
-  border: 2px solid red;
+  border: 2px solid #b7b7b7;
 
   width: 90%;
 }
-.checkbox-design{
-   padding: 5px;
+.form-input:focus{
+  outline: none;
+  border: 2px solid #F63E34;
 }
+
+.checkbox-design{
+   margin-left: 85px;
+   width : 30px;
+   height: 30px;
+
+}
+
+.checkbox-vaccinated{
+  width : 30px;
+  height: 30px;
+  background-color: #C33129;
+
+}
+
+.checkbox-label{
+  margin-left: 20px;
+  margin-bottom: 10px;
+  position: relative;
+  top: -8px;
+
+  
+  display : inline;
+}
+
+.textArea-design{
+  width : 90%;
+  resize: none;
+  height: 150px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  font-size: calc(2px + 2vmin);
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  border: 2px solid #b7b7b7;
+
+}
+.textArea-design:focus{
+  outline: none;
+  border: 2px solid #F63E34;
+
+}
+
+
+.submit-btn{
+  margin-top : 20px;
+  border-radius: 4px;
+  border-style:none;
+
+  height: 50px;
+  width : 91%;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: calc(5px + 2vmin);
+  color: #FFFFFF;
+  background-color: #F63E34;  
+}
+
+.submit-btn:hover {
+  background-color: #C33129;
+}
+.form-success{
+  text-align: center;
+  padding-right: 100px;
+  padding-left: 100px;
+  padding-bottom:50px;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+  font-size: calc(5px + 2vmin);
+
+}
+
+.link-colour{
+  color: #F63E34;
+
+}
+
+
 
 
 

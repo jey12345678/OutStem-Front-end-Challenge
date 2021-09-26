@@ -7,7 +7,12 @@ const UseForm = (callback,validate) =>{
     const [values, setValues] = useState({
         name: '',
         email: '',
-        whereFound: ''
+        whereFound: 'Select Option',
+        firstChoice: '-- Select Your First Team --',
+        secondChoice: '-- Select Your Second Team --',
+        thirdChoice: '-- Select Your Third Team --',
+        choices: ''
+
         
 
     })
@@ -15,6 +20,12 @@ const UseForm = (callback,validate) =>{
     //useState with errors as well.
     const [errors,setErrors] = useState({})
 
+    const [vaccinatedChecked, setVaccinatedChecked] = useState(false);
+    const[termsChecked,setTermsChecked] = useState(false);
+    const[wedChecked,setWedChecked] = useState(false);
+    const[thursChecked,setThursChecked] = useState(false);
+    const[friChecked,setFriChecked] = useState(false);
+    const[satChecked,setSatChecked] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
 
@@ -38,8 +49,27 @@ const UseForm = (callback,validate) =>{
     const handleSubmit = e =>{
         e.preventDefault();
 
-        setErrors(validate(values));
+        setErrors(validate(values,vaccinatedChecked,termsChecked,wedChecked,thursChecked,friChecked,satChecked));
         setIsSubmitting(true);
+    }
+
+    const handleVaccinatedClick = () => {
+        setVaccinatedChecked(!vaccinatedChecked);
+    }
+    const handleTermsClick = () => {
+        setTermsChecked(!termsChecked);
+    }
+    const handleWedClick = () => {
+        setWedChecked(!wedChecked);
+    }
+    const handleThursClick = () =>{
+        setThursChecked(!thursChecked);
+    }
+    const handleFriClick = () =>{
+        setFriChecked(!friChecked);
+    }
+    const handleSatClick = () =>{
+        setSatChecked(!satChecked);
     }
 
     //useEffect, to display errors if there are any, if there isn't allows you to submit
@@ -53,7 +83,7 @@ const UseForm = (callback,validate) =>{
         //Only want it to trigger when errors occurs.
     }, [errors]);
 
-    return {handleChange,values,handleSubmit,errors};
+    return {handleVaccinatedClick,handleTermsClick,handleWedClick,handleThursClick,handleFriClick,handleSatClick, handleChange,values,handleSubmit,errors,vaccinatedChecked, setVaccinatedChecked,termsChecked,setTermsChecked,wedChecked,setWedChecked, thursChecked,setThursChecked,friChecked,setFriChecked,satChecked,setSatChecked};
 };
 
 export default UseForm;
