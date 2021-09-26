@@ -43,7 +43,7 @@ export default function validateInfo(values,vaccinatedChecked,termsChecked,wedCh
 
     }
     
-    if(!values.email.includes("@")){
+    else if(!values.email.includes("@")){
         errors.email = "Email address is invalid"
     }
 
