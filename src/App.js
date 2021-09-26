@@ -1,5 +1,4 @@
 import './App.css';
-import HeadingDetails from './Components/HeadingDetails.js';
 import Form from './Components/Form.js';
 import image from './Images/hero.webp';
 
